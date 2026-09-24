@@ -34,7 +34,7 @@ El proyecto se relaciona con el **Objetivo de Desarrollo Sostenible (ODS) 12: Pr
 ### Avance 1
 
 Contiene la documentación y evidencias correspondientes al primer avance del proyecto, incluyendo el análisis, requerimientos y diagramas desarrollados por el equipo.
+---
 *Se irán agregando más carpetas de Avances según se requiera durante la asignatura, servirán para levantar observaciones e ir mejorando el Proyecto Final*
 ---
-
 **Proyecto académico — Análisis y Diseño de Software**
