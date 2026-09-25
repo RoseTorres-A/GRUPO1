@@ -1,1 +1,9 @@
-
+| Épica     | Nombre                                      | Requisitos trazados  |
+|-----------|---------------------------------------------|----------------------|
+| **EP-01** | Seguridad y gestión de usuarios             | RF-01 a RF-04        |
+| **EP-02** | Gestión de mercados, puestos y comerciantes | RF-05 a RF-09        |
+| **EP-03** | Catálogo e inventario de envases            | RF-10 a RF-13        |
+| **EP-04** | Préstamos y emisión de vales                | RF-14 a RF-20        |
+| **EP-05** | Devoluciones e incidencias                  | RF-21 a RF-28        |
+| **EP-06** | Control, alertas y consultas                | RF-29 a RF-32, RF-37 |
+| **EP-07** | Reportes, indicadores y auditoría           | RF-33 a RF-36        |
