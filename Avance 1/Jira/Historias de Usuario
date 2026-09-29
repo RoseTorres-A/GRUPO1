@@ -1,1 +1,35 @@
+EP-01 — Seguridad y gestión de usuarios
+HU-01 — Iniciar sesión: Como usuario del sistema, quiero iniciar sesión con mi usuario y contraseña, para acceder solo a las funciones de mi rol.
+HU-02 — Crear usuarios y asignar roles y mercados: Como administrador, quiero crear usuarios y asignarles rol y mercado, para controlar quién opera cada mercado.
 
+EP-02 — Gestión de mercados, puestos y comerciantes
+HU-03 — Registrar mercados y puestos: Como administrador, quiero registrar mercados y sus puestos, para organizar la operación por ubicación.
+HU-04 — Registrar comerciantes: Como encargado, quiero registrar comerciantes con su DNI/RUC y teléfono, para identificar al responsable de cada préstamo.
+
+EP-03 — Catálogo e inventario de envases
+HU-05 — Registrar tipos de envase: Como administrador, quiero registrar tipos de envase con material, capacidad y modo de identificación, para estandarizar el catálogo.
+HU-06 — Consultar inventario por estado: Como encargado, quiero consultar el inventario por tipo y estado para conocer cuántos envases están disponibles para préstamo.
+HU-07 — Registrar unidades serializadas y QR: Como encargado, quiero registrar unidades de envases mediante un QR serializado para poder rastrear individualmente las jabas y contenedores de mayor valor.
+
+EP-04 — Préstamos y emisión de vales
+HU-08 — Registrar préstamo mediante QR: Como encargado, quiero registrar un préstamo escaneando el QR del comerciante para entregar los envases de forma rápida y controlada.
+HU-09 — Emitir vale con folio y QR firmado: Como encargado, quiero que el sistema emita un vale con un folio único, fecha límite y QR firmado para que el préstamo pueda ser verificado e imposible de falsificar.
+HU-10 — Recibir el vale impreso o digital: Como comerciante, quiero recibir mi vale impreso o en mi celular para tener una constancia del préstamo realizado.
+
+EP-05 — Devoluciones e incidencias
+HU-11 — Registrar devolución mediante QR: Como encargado, quiero registrar la devolución escaneando el QR del vale para cerrar o actualizar el préstamo sin tener que buscar registros manuales.
+HU-12 — Registrar condición de los envases: Como encargado, quiero registrar la condición de los envases devueltos para identificar cuáles pueden volver al inventario y cuáles requieren revisión o baja.
+HU-13 — Registrar incidencias con fotografía: Como encargado, quiero registrar incidencias con fotografía, para dejar evidencia de daños o faltantes.
+HU-14 — Emitir constancia de devolución: Como comerciante, quiero recibir una constancia de devolución para demostrar que cumplí con la entrega de los envases.
+
+EP-06 — Control, alertas y consultas
+HU-15 — Vencimiento automático de vales: Como administrador, quiero que los vales se venzan automáticamente al pasar su fecha límite, para aplicar el control sin intervención manual y sin sanciones económicas.
+HU-16 — Enviar recordatorio 24 horas antes: Como comerciante, quiero recibir un recordatorio 24 horas antes del vencimiento de mi vale para poder realizar la devolución a tiempo.
+HU-17 — Consultar pendientes y vencidos: Como encargado, quiero consultar los préstamos pendientes y vencidos mediante filtros para priorizar su seguimiento.
+HU-18 — Registrar operaciones sin internet: Como encargado, quiero registrar operaciones sin internet para continuar atendiendo en zonas donde no existe cobertura.
+
+EP-07 — Reportes, indicadores y auditoría
+HU-19 — Consultar indicadores de gestión: Como administrador, quiero consultar un tablero con indicadores de retorno, tiempo de ciclo y bajas por causa para medir el desempeño ambiental del mercado.
+HU-20 — Exportar reportes: Como administrador, quiero exportar reportes en PDF y CSV para disponer de información que pueda ser presentada a la Gerencia de Gestión Ambiental.
+HU-21 — Consultar bitácora de operaciones: Como administrador, quiero consultar la bitácora de operaciones para auditar las anulaciones y ajustes realizados en el sistema.
+HU-22 — Anular vales emitidos por error: Como administrador, quiero anular un vale emitido por error indicando el motivo para corregir la operación sin eliminar su historial.
