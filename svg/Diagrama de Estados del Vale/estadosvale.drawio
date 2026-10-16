@@ -1,0 +1,268 @@
+<mxfile host="65bd71144e">
+    <diagram id="8tvZT-q7AiTrdp4CogVx" name="Page-1">
+        <mxGraphModel dx="3053" dy="2378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;stateDiagram-v2\n    [*] --&gt; EMITIDO : préstamo confirmado&lt;br/&gt;[comerciante HABILITADO y stock suficiente]\n    EMITIDO --&gt; VIGENTE : entrega confirmada\n    EMITIDO --&gt; ANULADO : anular(motivo)&lt;br/&gt;[error de emisión]\n    VIGENTE --&gt; PARCIAL : devolución / extravío validado / transferencia&lt;br/&gt;[saldo &gt; 0]\n    VIGENTE --&gt; CERRADO : devolución / transferencia&lt;br/&gt;[saldo = 0 y sin atribuibles]\n    VIGENTE --&gt; OBSERVADO : devolución / extravío validado&lt;br/&gt;[saldo = 0 y con atribuibles]\n    VIGENTE --&gt; VENCIDO : proceso diario 00:05&lt;br/&gt;[fecha límite vencida y saldo &gt; 0]\n    VIGENTE --&gt; ANULADO : anular(motivo)&lt;br/&gt;[sin devoluciones ni incidencias]\n    PARCIAL --&gt; PARCIAL : devolución parcial&lt;br/&gt;[saldo &gt; 0]\n    PARCIAL --&gt; CERRADO : [saldo = 0 y sin atribuibles]\n    PARCIAL --&gt; OBSERVADO : [saldo = 0 y con atribuibles]\n    PARCIAL --&gt; VENCIDO : proceso diario 00:05&lt;br/&gt;[fecha límite vencida y saldo &gt; 0]\n    VENCIDO --&gt; VENCIDO : devolución parcial tardía&lt;br/&gt;[saldo &gt; 0]\n    VENCIDO --&gt; CERRADO : regularización&lt;br/&gt;[saldo = 0 y sin atribuibles]\n    VENCIDO --&gt; OBSERVADO : regularización&lt;br/&gt;[saldo = 0 y con atribuibles]\n    VENCIDO --&gt; ANULADO : anulación excepcional&lt;br/&gt;[sin devoluciones y entrega no realizada]\n    CERRADO --&gt; [*]\n    OBSERVADO --&gt; [*]\n    ANULADO --&gt; [*]\n\n    note left of VENCIDO\n        Comerciante RESTRINGIDO (RD-04)\n        mientras tenga al menos un vale VENCIDO.\n        Al regularizar: «cerrado fuera de plazo».\n    end note\n\n    note right of OBSERVADO\n        Atribuible = envase NO APTO\n        o extravío validado (RN-05, RN-14)\n    end note&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="TfZ9jpKyP6FmpS44YAtZ-1">
+                    <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+                        <mxGeometry as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="n:root_start" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-2">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="14" width="14" x="547" y="280" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="EMITIDO" mermaidId="n:EMITIDO" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="EMITIDO" id="TfZ9jpKyP6FmpS44YAtZ-3">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="75" x="517" y="407" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="VIGENTE" mermaidId="n:VIGENTE" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="VIGENTE" id="TfZ9jpKyP6FmpS44YAtZ-4">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="77" x="-206" y="530" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="ANULADO" mermaidId="n:ANULADO" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="ANULADO" id="TfZ9jpKyP6FmpS44YAtZ-5">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="84" x="840" y="1190" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="PARCIAL" mermaidId="n:PARCIAL" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="PARCIAL" id="TfZ9jpKyP6FmpS44YAtZ-6">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="73" x="-445" y="880" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="CERRADO" mermaidId="n:CERRADO" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="CERRADO" id="TfZ9jpKyP6FmpS44YAtZ-7">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="83" x="-212" y="1190" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="n:OBSERVADO-group" mermaidBaseStyle="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-8">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="260" width="286" x="-790" y="1230" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="OBSERVADO" mermaidId="n:OBSERVADO" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="OBSERVADO" id="TfZ9jpKyP6FmpS44YAtZ-9">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-8" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="98" x="108" y="35" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="Atribuible = envase NO APTO&lt;br&gt;o extravío validado (RN-05, RN-14)" mermaidId="n:_note_1" mermaidBaseStyle="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fillColor=light-dark(#fff5ad,#2a2a2a);strokeColor=light-dark(#aaaa33,#cccccc);strokeWidth=1.3;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Atribuible = envase NO APTO&lt;br&gt;o extravío validado (RN-05, RN-14)" id="TfZ9jpKyP6FmpS44YAtZ-10">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-8" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fillColor=light-dark(#fff5ad,#2a2a2a);strokeColor=light-dark(#aaaa33,#cccccc);strokeWidth=1.3;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="85" width="232" x="27" y="180" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="e:OBSERVADO-&gt;_note_1#0" mermaidBaseStyle="curved=1;dashed=1;dashed=1;startArrow=none;endArrow=none;fillColor=none;strokeColor=#aaaa33;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-11">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-8" source="TfZ9jpKyP6FmpS44YAtZ-9" style="dashed=1;startArrow=none;endArrow=none;fillColor=none;strokeColor=#aaaa33;exitX=0.352;exitY=1.108;entryX=0.5;entryY=0;fixDash=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;exitPerimeter=0;" target="TfZ9jpKyP6FmpS44YAtZ-10">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="n:VENCIDO-group" mermaidBaseStyle="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-12">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=none;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="336" width="357" x="493" y="570" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="Comerciante RESTRINGIDO (RD-04)&lt;br&gt;mientras tenga al menos un vale VENCIDO.&lt;br&gt;Al regularizar: «cerrado fuera de plazo»." mermaidId="n:_note_0" mermaidBaseStyle="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fillColor=light-dark(#fff5ad,#2a2a2a);strokeColor=light-dark(#aaaa33,#cccccc);strokeWidth=1.3;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="Comerciante RESTRINGIDO (RD-04)&lt;br&gt;mientras tenga al menos un vale VENCIDO.&lt;br&gt;Al regularizar: «cerrado fuera de plazo»." id="TfZ9jpKyP6FmpS44YAtZ-13">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-12" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=8;spacingRight=8;fillColor=light-dark(#fff5ad,#2a2a2a);strokeColor=light-dark(#aaaa33,#cccccc);strokeWidth=1.3;fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="123" width="232" x="106" y="35" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="VENCIDO" mermaidId="n:VENCIDO" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="VENCIDO" id="TfZ9jpKyP6FmpS44YAtZ-14">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-12" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="40" width="79" x="35" y="220" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="devolución parcial tardía&#xa;[saldo &gt; 0]" mermaidId="e:VENCIDO-&gt;VENCIDO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);" mermaidBaseValue="devolución parcial tardía&#xa;[saldo &gt; 0]" id="TfZ9jpKyP6FmpS44YAtZ-15">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-12" source="TfZ9jpKyP6FmpS44YAtZ-14" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);rounded=0;edgeStyle=orthogonalEdgeStyle;" target="TfZ9jpKyP6FmpS44YAtZ-14">
+                        <mxGeometry relative="1" y="103" as="geometry">
+                            <mxPoint as="offset"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="e:_note_0-&gt;VENCIDO#0" mermaidBaseStyle="curved=1;dashed=1;dashed=1;startArrow=none;endArrow=none;fillColor=none;strokeColor=#aaaa33;exitX=0.47;exitY=1;entryX=0.96;entryY=0;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-16">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-12" source="TfZ9jpKyP6FmpS44YAtZ-13" style="dashed=1;startArrow=none;endArrow=none;fillColor=none;strokeColor=#aaaa33;exitX=0.47;exitY=1;entryX=0.96;entryY=0;fixDash=1;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;" target="TfZ9jpKyP6FmpS44YAtZ-14">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="n:root_end" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-17">
+                    <mxCell parent="TfZ9jpKyP6FmpS44YAtZ-1" style="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+                        <mxGeometry height="14" width="14" x="-177.5" y="1440" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="préstamo confirmado&#xa;[comerciante HABILITADO y stock suficiente]" mermaidId="e:root_start-&gt;EMITIDO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="préstamo confirmado&#xa;[comerciante HABILITADO y stock suficiente]" id="TfZ9jpKyP6FmpS44YAtZ-18">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="TfZ9jpKyP6FmpS44YAtZ-3">
+                        <mxGeometry relative="1" x="0.0057" y="186" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="entrega confirmada" mermaidId="e:EMITIDO-&gt;VIGENTE#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.68;entryX=0.51;entryY=0;" mermaidBaseValue="entrega confirmada" id="TfZ9jpKyP6FmpS44YAtZ-19">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-3" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.5;entryX=0.5;entryY=0;rounded=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;exitDx=0;exitDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-4">
+                        <mxGeometry relative="1" as="geometry">
+                            <mxPoint x="533.73" y="419.99999999999994" as="sourcePoint"/>
+                            <mxPoint x="-150.00000000000003" y="515.8" as="targetPoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="anular(motivo)&#xa;[error de emisión]" mermaidId="e:EMITIDO-&gt;ANULADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.68;entryX=0.21;entryY=0;" mermaidBaseValue="anular(motivo)&#xa;[error de emisión]" id="TfZ9jpKyP6FmpS44YAtZ-20">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-3" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.68;entryX=1;entryY=0.5;rounded=0;edgeStyle=orthogonalEdgeStyle;entryDx=0;entryDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-5">
+                        <mxGeometry relative="1" x="-0.6853" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="1000" y="434.2"/>
+                                <mxPoint x="1000" y="1205"/>
+                            </Array>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="devolución / extravío validado / transferencia&#xa;[saldo &gt; 0]" mermaidId="e:VIGENTE-&gt;PARCIAL#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.35;exitY=1;entryX=0.51;entryY=0;" mermaidBaseValue="devolución / extravío validado / transferencia&#xa;[saldo &gt; 0]" id="TfZ9jpKyP6FmpS44YAtZ-21">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-4" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.25;exitY=1;entryX=0.51;entryY=0;rounded=0;edgeStyle=orthogonalEdgeStyle;exitDx=0;exitDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-6">
+                        <mxGeometry relative="1" x="0.3594" y="8" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="-186.7" y="610"/>
+                                <mxPoint x="-407.8" y="610"/>
+                            </Array>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="devolución / transferencia&#xa;[saldo = 0 y sin atribuibles]" mermaidId="e:VIGENTE-&gt;CERRADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.83;entryX=0;entryY=0.1;" mermaidBaseValue="devolución / transferencia&#xa;[saldo = 0 y sin atribuibles]" id="TfZ9jpKyP6FmpS44YAtZ-22">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-4" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-7">
+                        <mxGeometry relative="1" x="-0.5129" y="47" as="geometry">
+                            <mxPoint x="1" as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="-167.5" y="1190"/>
+                                <mxPoint x="-167.5" y="1190"/>
+                            </Array>
+                            <mxPoint x="-150" y="580" as="sourcePoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="devolución / extravío validado&#xa;[saldo = 0 y con atribuibles]" mermaidId="e:VIGENTE-&gt;OBSERVADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.63;entryX=0.13;entryY=0;" mermaidBaseValue="devolución / extravío validado&#xa;[saldo = 0 y con atribuibles]" id="TfZ9jpKyP6FmpS44YAtZ-23">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-4" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.5;rounded=0;edgeStyle=orthogonalEdgeStyle;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitDx=0;exitDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-9">
+                        <mxGeometry relative="1" x="-0.2559" as="geometry">
+                            <mxPoint as="offset"/>
+                            <mxPoint x="-233" y="555.2" as="sourcePoint"/>
+                            <mxPoint x="-650" y="1260" as="targetPoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="anular(motivo)&#xa;[sin devoluciones ni incidencias]" mermaidId="e:VIGENTE-&gt;ANULADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.57;entryX=0.54;entryY=0;" mermaidBaseValue="anular(motivo)&#xa;[sin devoluciones ni incidencias]" id="TfZ9jpKyP6FmpS44YAtZ-25">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-4" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.993;exitY=0.397;entryX=0.54;entryY=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="TfZ9jpKyP6FmpS44YAtZ-5">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="devolución parcial&#xa;[saldo &gt; 0]" mermaidId="e:PARCIAL-&gt;PARCIAL#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);" mermaidBaseValue="devolución parcial&#xa;[saldo &gt; 0]" id="TfZ9jpKyP6FmpS44YAtZ-26">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-6" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;" target="TfZ9jpKyP6FmpS44YAtZ-6">
+                        <mxGeometry relative="1" y="72" as="geometry">
+                            <mxPoint as="offset"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="[saldo = 0 y sin atribuibles]" mermaidId="e:PARCIAL-&gt;CERRADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.51;exitY=1;entryX=0.29;entryY=0;" mermaidBaseValue="[saldo = 0 y sin atribuibles]" id="TfZ9jpKyP6FmpS44YAtZ-27">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-6" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.51;exitY=1;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-7">
+                        <mxGeometry relative="1" x="-0.0109" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="-430" y="920"/>
+                                <mxPoint x="-430" y="1210"/>
+                            </Array>
+                            <mxPoint x="-140" y="1180" as="targetPoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="[saldo = 0 y con atribuibles]" mermaidId="e:PARCIAL-&gt;OBSERVADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.8;entryX=0.59;entryY=0;" mermaidBaseValue="[saldo = 0 y con atribuibles]" id="TfZ9jpKyP6FmpS44YAtZ-28">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-6" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.5;entryX=0.904;entryY=0.028;rounded=0;edgeStyle=orthogonalEdgeStyle;exitDx=0;exitDy=0;entryDx=0;entryDy=0;entryPerimeter=0;">
+                        <mxGeometry relative="1" x="0.048" y="46" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="-610" y="900"/>
+                            </Array>
+                            <mxPoint x="-453.33999999999975" y="920" as="sourcePoint"/>
+                            <mxPoint x="-609.9979999999999" y="1266.12" as="targetPoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="proceso diario 00:05&#xa;[fecha límite vencida y saldo &gt; 0]" mermaidId="e:PARCIAL-&gt;VENCIDO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.75;entryX=0.51;entryY=0;" mermaidBaseValue="proceso diario 00:05&#xa;[fecha límite vencida y saldo &gt; 0]" id="TfZ9jpKyP6FmpS44YAtZ-29">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-6" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.75;exitY=0;entryX=0;entryY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;entryDx=0;entryDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-14">
+                        <mxGeometry relative="1" x="0.2953" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="-390.2" y="810"/>
+                            </Array>
+                            <mxPoint x="-390.0000000000001" y="950" as="sourcePoint"/>
+                            <mxPoint x="155.28999999999996" y="1030" as="targetPoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="regularización&#xa;[saldo = 0 y sin atribuibles]" mermaidId="e:VENCIDO-&gt;CERRADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.51;exitY=1;entryX=1;entryY=0.18;" mermaidBaseValue="regularización&#xa;[saldo = 0 y sin atribuibles]" id="TfZ9jpKyP6FmpS44YAtZ-30">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-14" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.21;exitY=0.989;entryX=1;entryY=0.18;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="TfZ9jpKyP6FmpS44YAtZ-7">
+                        <mxGeometry relative="1" x="0.2912" as="geometry">
+                            <mxPoint as="offset"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="regularización&#xa;[saldo = 0 y con atribuibles]" mermaidId="e:VENCIDO-&gt;OBSERVADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.78;entryX=1;entryY=0.3;" mermaidBaseValue="regularización&#xa;[saldo = 0 y con atribuibles]" id="TfZ9jpKyP6FmpS44YAtZ-31">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-14" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;exitDx=0;exitDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-9">
+                        <mxGeometry relative="1" x="-0.0128" as="geometry">
+                            <mxPoint as="offset"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="anulación excepcional&#xa;[sin devoluciones y entrega no realizada]" mermaidId="e:VENCIDO-&gt;ANULADO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.8;exitY=1;entryX=0.22;entryY=0;" mermaidBaseValue="anulación excepcional&#xa;[sin devoluciones y entrega no realizada]" id="TfZ9jpKyP6FmpS44YAtZ-32">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-14" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.8;exitY=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;" target="TfZ9jpKyP6FmpS44YAtZ-5">
+                        <mxGeometry relative="1" x="-0.1782" y="10" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="591.2" y="870"/>
+                                <mxPoint x="740" y="870"/>
+                                <mxPoint x="740" y="1010"/>
+                                <mxPoint x="861" y="1010"/>
+                            </Array>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="e:CERRADO-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-33">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-7" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="TfZ9jpKyP6FmpS44YAtZ-17">
+                        <mxGeometry relative="1" as="geometry">
+                            <Array as="points"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="e:OBSERVADO-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.68;entryX=0;entryY=0.36;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-34">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-9" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);entryX=0;entryY=0.36;exitX=0.75;exitY=1;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;" target="TfZ9jpKyP6FmpS44YAtZ-17">
+                        <mxGeometry relative="1" x="0.1537" y="2.88" as="geometry">
+                            <Array as="points">
+                                <mxPoint x="-608.5" y="1350"/>
+                                <mxPoint x="-500" y="1350"/>
+                                <mxPoint x="-500" y="1446"/>
+                            </Array>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="" mermaidId="e:ANULADO-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.43;" mermaidBaseValue="" id="TfZ9jpKyP6FmpS44YAtZ-35">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" source="TfZ9jpKyP6FmpS44YAtZ-5" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.43;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;" target="TfZ9jpKyP6FmpS44YAtZ-17">
+                        <mxGeometry relative="1" as="geometry"/>
+                    </mxCell>
+                </UserObject>
+                <UserObject label="proceso diario 00:05&#xa;[fecha límite vencida y saldo &gt; 0]" mermaidId="e:VIGENTE-&gt;VENCIDO#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=1;exitY=0.85;entryX=0;entryY=0.08;" mermaidBaseValue="proceso diario 00:05&#xa;[fecha límite vencida y saldo &gt; 0]" id="TfZ9jpKyP6FmpS44YAtZ-24">
+                    <mxCell edge="1" parent="TfZ9jpKyP6FmpS44YAtZ-1" style="startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);entryX=0.5;entryY=0;edgeStyle=orthogonalEdgeStyle;rounded=0;curved=0;entryDx=0;entryDy=0;" target="TfZ9jpKyP6FmpS44YAtZ-14">
+                        <mxGeometry relative="1" x="-0.159" as="geometry">
+                            <mxPoint as="offset"/>
+                            <Array as="points">
+                                <mxPoint x="-140" y="573.6"/>
+                                <mxPoint x="-140" y="610"/>
+                                <mxPoint x="567.5" y="610"/>
+                            </Array>
+                            <mxPoint x="-140" y="570" as="sourcePoint"/>
+                            <mxPoint x="536.25" y="783.2" as="targetPoint"/>
+                        </mxGeometry>
+                    </mxCell>
+                </UserObject>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
